@@ -47,7 +47,6 @@ function getComputerChoice() {
 //One round play
 
 function playRound(playerSelection, computerSelection) {
-
         if ((playerSelection == 1 && computerSelection == 1 ) || (playerSelection == 2 && computerSelection == 2) || (playerSelection == 3 && computerSelection == 3)) {
             console.log("It's a draw, try again!");
         }  else if (playerSelection == 1 && computerSelection == 2)
@@ -74,20 +73,20 @@ function playRound(playerSelection, computerSelection) {
             {console.log("Congratulations, YOU won! Scissors beats Paper!");
                 playerScore = ++playerScore;
         } 
-
-    
 }
 
-function game() {
+//Function to loop game 5 times and to console.log scores after each round
 
+function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = playerValue();
         let computerSelection = getComputerChoice();
         let result = playRound(playerSelection, computerSelection);
             console.log(`Wins: ${playerScore} Loses: ${computerScore}`);
     }
-
 }
+
+//Function to report winner based on scores
 
 function reportWinner() {
     if (playerScore < computerScore) {
